@@ -43,5 +43,3 @@ class ExceptionHandler extends BaseExceptionHandler {
 }
 
 module.exports = ExceptionHandler
-
-module.exports = ExceptionHandler
