@@ -19,3 +19,9 @@ require('./auth')
  * Importa s rotas de admin
  */
 require('./admin')
+
+/**
+ * 
+ * Importa rotas de clientes
+ */
+require('./client')
