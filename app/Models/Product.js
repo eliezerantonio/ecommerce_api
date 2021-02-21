@@ -4,15 +4,14 @@
 const Model = use('Model')
 
 class Product extends Model {
+    image() {
+        return this.belongsTo('App/Models/Image')
+    }
 
-    image() { return this.belongsTo('App/Models/Image') }
-
-    /** 
-     * 
-     * Relacionamento entre produtos e iamgens
-     * galria de imagens do produto
+    /**
+     * Relacionamento entre produto e imagens
+     * Galeria de imagens do produto!
      */
-
     images() {
         return this.belongsToMany('App/Models/Image')
     }
@@ -25,15 +24,11 @@ class Product extends Model {
     }
 
     /**
-     * 
-     * Relacionamento entre produto e Coupons de desconto
+     * Relacionamento entre produtos e cupons de desconto
      */
-
-    coupon() {
+    coupons() {
         return this.belongsToMany('App/Models/Coupon')
     }
-
-
 }
 
 module.exports = Product
