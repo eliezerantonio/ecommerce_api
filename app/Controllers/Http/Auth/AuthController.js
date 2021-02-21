@@ -55,7 +55,7 @@ class AuthController {
         if (!refresh_token) {
             refresh_token = request.header('refresh_token')
         }
-        await auth.authenticator('jwt').revokeTokens([refresh], true)
+        await auth.authenticator('jwt').revokeTokens([refresh_token], true)
 
         return response.status(204).send({})
     }
