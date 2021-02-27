@@ -12,7 +12,7 @@ Route.group(() => {
      * 
      */
 
-    Route.resource('next', 'CategoryController').apiOnly()
+    Route.resource('categories', 'CategoryController').apiOnly()
         /**
          * 
          * Product resource routes
