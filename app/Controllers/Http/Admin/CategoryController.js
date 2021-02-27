@@ -16,8 +16,13 @@ class CategoryController {
      * @param {Request} ctx.request
      * @param {Response} ctx.response
      * @param {View} ctx.view
+     * @param {Object} ctx.pagination
      */
-    async index({ request, response, view }) {}
+    async index({ request, response, view, pagination }) {
+
+
+
+    }
 
 
 

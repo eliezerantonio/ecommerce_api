@@ -21,6 +21,7 @@ Factory.blueprint('App/Models/User', faker => {
         name: faker.first(),
 
         surname: faker.last(),
+
         email: faker.email({ domain: 'gmail.com' }),
 
         password: 'secret'
@@ -35,11 +36,11 @@ Factory.blueprint('App/Models/Category', faker => {
     }
 })
 
-Factory.blueprint('App/Models/Category', faker => {
+Factory.blueprint('App/Models/Product', faker => {
         return {
             name: faker.animal(),
             description: faker.sentence(),
-            price: faker.price.floating({ min: 0, max: 10000, fixed: 2 })
+            price: faker.floating({ min: 0, max: 10000, fixed: 2 })
         }
     })
     //

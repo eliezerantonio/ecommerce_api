@@ -3,6 +3,7 @@
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
+const Product = use('app/Models/Product');
 
 /**
  * Resourceful controller for interacting with products
@@ -17,7 +18,12 @@ class ProductController {
      * @param {Response} ctx.response
      * @param {View} ctx.view
      */
-    async index({ request, response, view }) {}
+    async index({ request, response, view, }) {
+        const page = request.input('page')
+        const limit = request.input('limit')
+        const products = Product.query().paginate(page, limit);
+        return response.send(response);
+    }
 
 
 
