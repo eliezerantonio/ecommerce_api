@@ -1,8 +1,8 @@
 'use strict'
-
-/** @typedef {import('@adonisjs/framework/src/Request')} Request */
-/** @typedef {import('@adonisjs/framework/src/Response')} Response */
-/** @typedef {import('@adonisjs/framework/src/View')} View */
+const Category = use('App/Models/Category')
+    /** @typedef {import('@adonisjs/framework/src/Request')} Request */
+    /** @typedef {import('@adonisjs/framework/src/Response')} Response */
+    /** @typedef {import('@adonisjs/framework/src/View')} View */
 
 /**
  * Resourceful controller for interacting with categories
@@ -19,7 +19,15 @@ class CategoryController {
      * @param {Object} ctx.pagination
      */
     async index({ request, response, view, pagination }) {
-        const categories = await CategoryController.query().paginate(pagination.page, pagination.limit);
+
+        const title = request.input('title');
+        //     caso titlo nao seja undefine
+        const query = Category.query()
+        if (title) {
+            query.where('title', 'LIKE', `%${title}%`);
+        }
+
+        const categories = await query.paginate(pagination.page, pagination.limit);
 
         return response.send(categories);
 
