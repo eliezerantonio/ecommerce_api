@@ -11,6 +11,7 @@ class CategorySchema extends Schema {
             table.string('description', 255)
             table.integer('image_id').unsigned()
             table.timestamps()
+
             table.foreign('image_id').references('id').inTable('images').onDelete('cascade')
         })
     }

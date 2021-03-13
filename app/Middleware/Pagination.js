@@ -14,7 +14,7 @@ class Pagination {
         if (ctx.request.method() == 'GET') {
             const page = parseInt(ctx.request.input('page'))
             const limit = parseInt(ctx.request.input('limit'))
-                //atribui os valaores paddos via get para propriedade pagination do objecto ctx
+                //atribui os valaores pasados via get para propriedade pagination do objecto ctx
             ctx.pagination = {
                 page,
                 limit
